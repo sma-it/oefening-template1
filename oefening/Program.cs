@@ -4,19 +4,34 @@ namespace First
 {
 	class Program
 	{
-		/* instructies
-		 * 
-		 */
-		public static int NaamOefening(int a, int b)
-		{
-			// schrijf hier je code
-			return 0;
-		}
+
 
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Resultaat van oefening 1: "  + NaamOefening(1, 3));
-			Console.ReadKey();
+			var menu = new Utils.Menu();
+			// voeg oefeningen to door een callback naar een functie
+			menu.AddOption('1', "Voer Oef1 uit", DoOef1);
+
+			// of gebruik inline functies
+			menu.AddOption('2', "Voer Oef1 anders uit",
+				() =>
+				{
+					if (Oef1.Oefening() == true)
+					{
+						Console.WriteLine("This is correct!");
+					}
+				});
+
+
+			menu.Start();
+		}
+
+		static void DoOef1()
+		{
+			if(Oef1.Oefening() == true)
+			{
+				Console.WriteLine("This is correct!");
+			}
 		}
 	}
 }

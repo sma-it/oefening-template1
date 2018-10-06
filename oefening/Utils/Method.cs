@@ -22,6 +22,11 @@ namespace Utils
 		{
 			return Invoke(new object[] { });
 		}
+		
+		public object Invoke(object arg)
+		{
+			return Invoke(new object[] { arg });
+		}
 
 		public object Invoke(object[] args)
 		{

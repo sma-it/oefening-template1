@@ -75,6 +75,11 @@ namespace Utils
 			return new Property(property, instance);
 		}
 
+		public bool HasMethod(string name, Type argType)
+		{
+			return HasMethod(name, new Type[] { argType });
+		}
+
 		public bool HasMethod(string name, Type[] argTypes = null)
 		{
 			var method = 
@@ -82,6 +87,11 @@ namespace Utils
 				?	instance.GetType().GetMethod(name)
 				: instance.GetType().GetMethod(name, argTypes);
 			return method != null;
+		}
+		
+		public Method Method(string name, Type argType)
+		{
+			return Method(name, new Type[] { argType });
 		}
 
 		public Method Method(string name, Type[] argTypes = null)

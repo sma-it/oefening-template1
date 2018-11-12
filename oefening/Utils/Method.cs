@@ -22,7 +22,7 @@ namespace Utils
 		{
 			return Invoke(new object[] { });
 		}
-		
+
 		public object Invoke(object arg)
 		{
 			return Invoke(new object[] { arg });
@@ -33,7 +33,8 @@ namespace Utils
 			try
 			{
 				return method.Invoke(obj, args);
-			} catch (ArgumentException e)
+			}
+			catch (ArgumentException e)
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("Using your method "

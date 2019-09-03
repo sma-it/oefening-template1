@@ -4,11 +4,9 @@ namespace First
 {
 	class Program
 	{
-
-
 		static void Main(string[] args)
 		{
-			var menu = new Utils.Menu();
+			var menu = new SMUtils.Menu();
 			// voeg oefeningen to door een callback naar een functie
 			menu.AddOption('1', "Voer Oef1 uit", DoOef1);
 
